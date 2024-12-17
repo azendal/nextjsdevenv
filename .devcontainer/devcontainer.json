@@ -1,0 +1,27 @@
+{
+    "name": "Next.js Dev Environment",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "bash"
+        },
+      "vscode": {
+        "extensions": [
+          "esbenp.prettier-vscode",
+          "dbaeumer.vscode-eslint",
+          "ms-vscode.js-debug-nightly",
+          "formulahendry.auto-close-tag",
+          "formulahendry.auto-rename-tag"
+        ]
+      }
+    },
+    "postCreateCommand": "npm install -g create-next-app yarn",
+    "remoteUser": "node",
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ]
+  }
+  
